@@ -5,6 +5,10 @@
 下载GIS插件：
 https://github.com/domlysz/BlenderGIS
 
-安装插件：
+安装imageio插件：
+https://github.com/imageio/imageio-binaries
 
-![](网址)
+不然blender提示报错，放在和GIS插件同目录下。
+
+导出文件.fbx
+

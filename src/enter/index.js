@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import '../base/index.css';
+import {City} from './city'
+
 export const initCity = () => {
     // 获取canvas 元素
     const canvas = document.getElementById('webgl');
@@ -28,8 +30,19 @@ export const initCity = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     // 设置场景颜色
     renderer.setClearColor(new THREE.Color(0x000000), 1);
-    // 渲染场景
-    renderer.render(scene, camera);
+
+    // 加载城市模型
+    const city = new City(scene);
+    // 创建动画
+    const start = ()=>{
+        city.start();
+         // 渲染场景
+        renderer.render(scene, camera);
+
+        requestAnimationFrame(start);
+    }
+
+   
 
     //// 窗口自适应
     window.addEventListener('resize', () => {
